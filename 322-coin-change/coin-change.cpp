@@ -1,18 +1,18 @@
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
-        vector<long long> dp(amount+1, -1);
+        vector<int> dp(amount+1, -1);
         dp[0] = 0;
-        for(long long i=1; i<=amount; i++) {
-            long long min_coins = INT_MAX;
-            long long left = 1, right = i-1;
+        for(int i=1; i<=amount; i++) {
+            int min_coins = INT_MAX;
+            int left = 1, right = i-1;
             while(left <= right) {
                 if(dp[left] > 0 && dp[right] > 0)
                 min_coins = min(min_coins, dp[left] + dp[right]); 
                 left++;
                 right--;
             }
-            for(long long j=0; j<coins.size(); j++) {
+            for(int j=0; j<coins.size(); j++) {
                 if(i % coins[j] == 0) 
                 min_coins = min(min_coins, i/coins[j]);
             }
