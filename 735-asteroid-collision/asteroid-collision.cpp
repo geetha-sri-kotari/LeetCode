@@ -21,13 +21,6 @@ public:
                     }
                     else {
                         continue;
-                        // vector<int> temp;
-                        // while(!positives.empty()) {
-                        //     temp.push_back(positives.top());
-                        //     positives.pop();
-                        // }
-                        // reverse(temp.begin(), temp.end());
-                        // for(auto it : temp) res.push_back(it);
                     }
                 }
             }
